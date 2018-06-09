@@ -1,11 +1,11 @@
 var ctx = document.getElementById('pieChart').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'pie',
+    type: 'doughnut',
     data: {
         labels: ["Bitcoin", "Ethereum", "Ripple", "Cardano", "Tron"],
         datasets: [{
             label: '# of Votes',
-            data: [],/* Data from json - the values*/
+            data: [165,54,984,884,646],/* Data from json - the values*/
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

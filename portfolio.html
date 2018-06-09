@@ -87,31 +87,23 @@
       </div>
         <main class="mdl-layout__content mdl-color--blue-grey-700">
         <div class="mdl-grid content">
-          <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <a href="#" class="card-links">
-              <p class="dashboard-header"><span class="icons-symbol">+</span>Add a Transaction</p>
-            </a>
+          <div class="dashboard-header-secondary">Portfolio Value<br/>
+            <!--add the the total profit-->
+            <div class="dashboard-title-secondary">$5465</div>
+            <!--add class as per the profit/loss
+              loss: class : mdl-color-text--red-700, value : arrow_drop_down;
+
+              profit : mdl-color-text--green-600, value : arrow_drop_up;
+            -->
+            <i class="mdl-color-text--green-600 material-icons negative-arrow">arrow_drop_up</i>
+            <!--add the percentage value of growth/minus-->
+            <p class="desp-per"></p>
           </div>
+          
+          
           <p class="dashboard-header-secondary">Top Cryprocurrencies</p>
           <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <table class="mdl-data-table mdl-js-data-table" style="width: 100%">
-              <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric">Rank</th>
-                  <th class="mdl-data-table__cell--non-numeric">Coins</th>
-                  <th class="mdl-data-table__cell--non-numeric">Value</th>
-                  <th class="mdl-data-table__cell--non-numeric">Percent</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric"></th>
-                  <th class="mdl-data-table__cell--non-numeric"></th>
-                  <th class="mdl-data-table__cell--non-numeric"></th>
-                  <th class="mdl-data-table__cell--non-numeric"></th>
-                </tr>
-              </tbody>
-            </table>
+            <canvas id="pieChart" height="100px"></canvas>
             </div>
         </div>
       </main>

@@ -87,24 +87,18 @@
       </div>
         <main class="mdl-layout__content mdl-color--blue-grey-700">
         <div class="mdl-grid content">
-          <div class="dashboard-header-secondary">Portfolio Value<br/>
-            <!--add the the total profit-->
-            <div class="dashboard-title-secondary">$5465</div>
-            <!--add class as per the profit/loss
-              loss: class : mdl-color-text--red-700, value : arrow_drop_down;
-
-              profit : mdl-color-text--green-600, value : arrow_drop_up;
-            -->
-            <i class="mdl-color-text--green-600 material-icons negative-arrow">arrow_drop_up</i>
-            <!--add the percentage value of growth/minus-->
-            <p class="desp-per"></p>
+          <div class="dashboard-header-secondary">Add the Transaction</div>
+            <div class="mdl-cell mdl-cell--12-col mdl-grid">
+          <div class="btn-container">
+            <!-- Accent-colored raised button with ripple -->
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-fetch">
+              One Click Entry
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect btn-fetch-2">
+              Manual Entry
+            </button>
           </div>
-          
-          
-          <p class="dashboard-header-secondary">Top Cryprocurrencies</p>
-          <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <canvas id="pieChart" height="100px"></canvas>
-            </div>
+          </div>
         </div>
       </main>
     

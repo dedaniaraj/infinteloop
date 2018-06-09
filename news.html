@@ -35,7 +35,7 @@
     <div class="layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="header mdl-layout__header mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Portfolio</span>
+          <span class="mdl-layout-title">News</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -75,10 +75,10 @@
           </div>
         </header>
         <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link active-tab" href="">Portfolio</a>
+          <a class="mdl-navigation__link" href="index.php">Portfolio</a>
           <a class="mdl-navigation__link" href="#">Watchlist</a>
           <a class="mdl-navigation__link" href="#">Market</a>
-          <a class="mdl-navigation__link" href="news.html">News</a>
+          <a class="mdl-navigation__link active-tab" href="#">News</a>
           <hr/>
           <a class="mdl-navigation__link" href="learn.html">Learn</a>
           <div class="mdl-layout-spacer"></div>
@@ -87,24 +87,12 @@
       </div>
         <main class="mdl-layout__content mdl-color--blue-grey-700">
         <div class="mdl-grid content">
-          <div class="dashboard-header-secondary">Portfolio Value<br/>
-            <!--add the the total profit-->
-            <div class="dashboard-title-secondary">$5465</div>
-            <!--add class as per the profit/loss
-              loss: class : mdl-color-text--red-700, value : arrow_drop_down;
-
-              profit : mdl-color-text--green-600, value : arrow_drop_up;
-            -->
-            <i class="mdl-color-text--green-600 material-icons negative-arrow">arrow_drop_up</i>
-            <!--add the percentage value of growth/minus-->
-            <p class="desp-per"></p>
+          <div class="mdl-cell mdl-cell--12-col mdl-grid">
+            
+            <iframe width="100%" height="750" frameborder="0" class="rssdog" src="https://www.rssdog.com/index.php?url=https%3A%2F%2Fwww.investing.com%2Frss%2Fnews_301.rss&mode=html&showonly=&maxitems=25&showdescs=1&desctrim=200&descmax=0&tabwidth=100%25&xmlbtn=1&linktarget=_blank&textsize=large&bordercol=%23d4d0c8&headbgcol=%23999999&headtxtcol=%23ffffff&titlebgcol=%23f1eded&titletxtcol=%23000000&itembgcol=%23ffffff&itemtxtcol=%23000000&ctl=0"></iframe>
           </div>
+        </div>
           
-          
-          <p class="dashboard-header-secondary">Top Cryprocurrencies</p>
-          <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <canvas id="pieChart" height="100px"></canvas>
-            </div>
         </div>
       </main>
     

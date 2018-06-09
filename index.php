@@ -1,3 +1,12 @@
+<?php
+$coin[0] = "bitcoin";
+$coin[1] = "ethereum";
+$coin[2] = "ripple";
+$coin[3] = "cardano";
+$coin[4] = "tron";
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -76,34 +85,55 @@
         </header>
         <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link active-tab" href="">Portfolio</a>
-          <a class="mdl-navigation__link" href="#">Watchlist</a>
-          <a class="mdl-navigation__link" href="#">Market</a>
-          <a class="mdl-navigation__link" href="news.html">News</a>
+          <a class="mdl-navigation__link" href="">Watchlist</a>
+          <a class="mdl-navigation__link" href="">Market</a>
+          <a class="mdl-navigation__link" href="">News</a>
           <hr/>
-          <a class="mdl-navigation__link" href="learn.html">Learn</a>
+          <a class="mdl-navigation__link" href="">Learn</a>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-100 material-icons" role="presentation">help_outline</i><span class="">Help</span></a>
         </nav>
       </div>
         <main class="mdl-layout__content mdl-color--blue-grey-700">
         <div class="mdl-grid content">
-          <div class="dashboard-header-secondary">Portfolio Value<br/>
-            <!--add the the total profit-->
-            <div class="dashboard-title-secondary">$5465</div>
-            <!--add class as per the profit/loss
-              loss: class : mdl-color-text--red-700, value : arrow_drop_down;
-
-              profit : mdl-color-text--green-600, value : arrow_drop_up;
-            -->
-            <i class="mdl-color-text--green-600 material-icons negative-arrow">arrow_drop_up</i>
-            <!--add the percentage value of growth/minus-->
-            <p class="desp-per"></p>
+          <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+            <a href="https://ieee-iccdw.com/portfolio_middle.html" class="card-links">
+              <p class="dashboard-header"><span class="icons-symbol">+</span>Add a Transaction</p>
+            </a>
           </div>
-          
-          
           <p class="dashboard-header-secondary">Top Cryprocurrencies</p>
           <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <canvas id="pieChart" height="100px"></canvas>
+            <table class="mdl-data-table mdl-js-data-table" style="width: 100%">
+              <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric">Rank</th>
+                  <th class="mdl-data-table__cell--non-numeric">Coins</th>
+                  <th class="mdl-data-table__cell--non-numeric">Value</th>
+                  <th class="mdl-data-table__cell--non-numeric">Percent</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php
+                  for($n=0;$n<5;$n++)
+                  {
+                 $json = file_get_contents('http://13.126.248.75:8080/dataset/coin/'.$coin["$n"]);
+                $data = json_decode($json);
+                $value = $data[0]->Open;
+                $high = $data[0]->High;
+                $low = $data[0]->Low;
+                $volume = ($high+$low)/2 - $value;
+                $z = $n + 1;
+                    echo '
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric">'.$z.'</th>
+                  <th class="mdl-data-table__cell--non-numeric">'.$coin["$n"].'</th>
+                  <th class="mdl-data-table__cell--non-numeric">'.$value.'</th>
+                  <th class="mdl-data-table__cell--non-numeric">'.$volume.'</th>
+                </tr>
+                ';}
+                ?>
+              </tbody>
+            </table>
             </div>
         </div>
       </main>

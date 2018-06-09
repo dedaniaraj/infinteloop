@@ -47,6 +47,24 @@
  .negative-arrow{
   font-size: 48px;
  }
+ .btn-container{
+  margin-top: 50px;
+ }
+.btn-fetch, .btn-fetch-2{
+  background-color: #fff;
+}
+.btn-fetch:hover, .btn-fetch-2:hover{
+  background-color: #f0f0f0;
+}
+.btn-fetch-2{
+  margin-left: 16px;
+}
+
+
+
+
+
+ /**END MANUAL STYLE**/
 .avatar {
   width: 48px;
   height: 48px;

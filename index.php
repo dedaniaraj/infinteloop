@@ -86,10 +86,10 @@ $coin[4] = "tron";
         <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link active-tab" href="#">Portfolio</a>
           <a class="mdl-navigation__link" href="#">Watchlist</a>
-          <a class="mdl-navigation__link" href="#">Market</a>
+          <a class="mdl-navigation__link" href="market.html">Market</a>
           <a class="mdl-navigation__link" href="news.html">News</a>
           <hr/>
-          <a class="mdl-navigation__link" href="">Learn</a>
+          <a class="mdl-navigation__link" href="learn.html">Learn</a>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-100 material-icons" role="presentation">help_outline</i><span class="">Help</span></a>
         </nav>

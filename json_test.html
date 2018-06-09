@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Test</title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  	$(function() {
+
+	 $.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,DASH,LTC,XRP&tsyms=USD", function( data ) {
+	  $.each(data['DISPLAY'], function( index, value ) {
+	   
+	    var spanPrice = $('<span/>')
+	        .attr('id', index+"price")
+	        .html(value['USD']['PRICE']);
+
+	    var spanMktcap = $('<span/>')
+	        .attr('id', index+"mktcap")
+	        .html(value['USD']['MKTCAP']);
+
+	    var $newDiv = $("<div/>")   // creates a div element
+	        .attr("id", index) 	   // adds the id
+	        .addClass("element")  // add a class
+	        .append(spanPrice)
+	        .append(spanMktcap)
+
+	         $("code").append(index , $newDiv);
+	  });
+	});
+
+	});
+  </script>
+</head>
+<body>
+	<code></code>
+
+</body>
+</html>

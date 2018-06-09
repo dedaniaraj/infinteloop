@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:700,900|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Poppins:700,900|Roboto:900');
 /** Custom Styles 2 **/
 
 .icons-symbol{
@@ -104,6 +104,49 @@
 .content-container{
   padding-left: 24px;
 }
+.table-title{
+  font-size: 24px;
+  font-family: 'Roboto';
+  font-weight: 900;
+}
+
+
+
+/***NEW STYLE***/
+
+.coin-detail-desp{
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.coin-detail-desp > span{
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.right-part-portfolio{
+  margin-left: 24px;
+  margin-top: 12px;
+  border-radius: 5px;
+  padding: 24px;  
+}
+.desp-per{
+  font-family: 'Poppins';
+  font-size: 24px;
+  color: #fff;
+  opacity: 0.8;
+  margin-left: -5px;
+  margin-bottom: 24px;
+}
+.portfolio-special-header{
+  margin-top: 48px;
+}
+
+
+
+
 
 
 

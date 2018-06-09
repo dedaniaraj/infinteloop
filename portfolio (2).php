@@ -1,12 +1,3 @@
-<?php
-$coin[0] = "bitcoin";
-$coin[1] = "ethereum";
-$coin[2] = "ripple";
-$coin[3] = "cardano";
-$coin[4] = "tron";
-
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -47,9 +38,6 @@ $coin[4] = "tron";
           <span class="mdl-layout-title">Portfolio</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="">
-            <i class="material-icons">notifications</i>
-          </button>
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
               <i class="material-icons">search</i>
             </label>
@@ -57,7 +45,6 @@ $coin[4] = "tron";
               <input class="mdl-textfield__input" type="text" id="search">
               <label class="mdl-textfield__label" for="search">Enter your query...</label>
             </div>
-            
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
@@ -88,62 +75,45 @@ $coin[4] = "tron";
           </div>
         </header>
         <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link active-tab" href="#">Portfolio</a>
+          <a class="mdl-navigation__link active-tab" href="">Portfolio</a>
           <a class="mdl-navigation__link" href="#">Watchlist</a>
-          <a class="mdl-navigation__link" href="market.html">Market</a>
+          <a class="mdl-navigation__link" href="#">Market</a>
           <a class="mdl-navigation__link" href="news.html">News</a>
           <hr/>
           <a class="mdl-navigation__link" href="learn.html">Learn</a>
           <div class="mdl-layout-spacer"></div>
-          <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-100 material-icons" role="presentation">help_outline</i><span class="">Help</span></a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-100 material-icons" role="presentation">help_outline</i><span class="">Help</span></a>
         </nav>
       </div>
         <main class="mdl-layout__content mdl-color--blue-grey-700">
         <div class="mdl-grid content">
-          <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-grid">
-            <a href="https://ieee-iccdw.com/portfolio_middle.html" class="card-links">
-              <p class="dashboard-header">
-                <span class="icons-symbol">+</span>Add a Transaction</p>
-            </a>
-          </div>
-            
-          <div class="mdl-cell mdl-cell--12-col mdl-grid">
-            <p class="dashboard-header-secondary">Top Cryprocurrencies</p>
-          </div>
+          <div class="dashboard-header-secondary">Portfolio Value<br/>
+            <!--add the the total profit-->
+            <div class="dashboard-title-secondary">$5465</div>
+            <!--add class as per the profit/loss
+              loss: class : mdl-color-text--red-700, value : arrow_drop_down;
+
+              profit : mdl-color-text--green-600, value : arrow_drop_up;
+            -->
+            <i class="mdl-color-text--green-600 material-icons negative-arrow">arrow_drop_up</i>
+            <!--add the percentage value of growth/minus-->
+            <p class="desp-per">5.1%</p>
+          </div></div>
+            <div class="mdl-shadow--2dp mdl-cell mdl-cell--10-col mdl-grid tip-container"><span class="tip-header">Hey! Here's a tip to improve your profit!!</span><br/>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
           <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-            <table class="mdl-data-table mdl-js-data-table" style="width: 100%">
-              <thead>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>RANK</strong></th>
-                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>COINS</strong></th>
-                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>VALUE</strong></th>
-                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>PERCENT CHANGE</strong></th>
-                </tr>
-              </thead>
-              <tbody>
-                  <?php
-                  for($n=0;$n<5;$n++)
-                  {
-                 $json = file_get_contents('http://13.126.248.75:8080/dataset/coin/'.$coin["$n"]);
-              $data = json_decode($json);
-              $value = $data[0]->Open;
-              $high = $data[0]->High;
-              $low = $data[0]->Low;
-              $volume = ($high+$low)/2 - $value;
-              $z = $n + 1;
-                  echo '
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric">'.$z.'</th>
-                  <th class="mdl-data-table__cell--non-numeric">'.$coin["$n"].'</th>
-                  <th class="mdl-data-table__cell--non-numeric">'.$value.'</th>
-                  <th class="mdl-data-table__cell--non-numeric">';if($volume<0){echo '<font color="red">'.$volume.'</th>
-                </tr>
-                ';}else {echo'<font color="green">'.$volume.'</th>
-                </tr>
-                ';}}
-                ?>
-              </tbody>
-            </table>
+          <p class="dashboard-header" style="margin-left: 16px;">Top Cryptocurrencies<br/></p>
+            <canvas id="pieChart" height="100px"></canvas>
+            </div>
+            <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" >
+                  <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="mdl-cell mdl-cell-4-col mdl-grid coinmarketcap-currency-widget" data-currencyid="1" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+            
+            <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="mdl-cell mdl-cell-4-col mdl-grid coinmarketcap-currency-widget" data-currencyid="1027" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+            
+            <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class=" mdl-cell mdl-cell-4-col mdl-grid coinmarketcap-currency-widget" data-currencyid="52" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+            
+            
             </div>
         </div>
       </main>

@@ -59,6 +59,51 @@
 .btn-fetch-2{
   margin-left: 16px;
 }
+.see-more-link{
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 32px;
+}
+.see-more-link:hover{
+  opacity: 0.8;
+}
+.mdl-cell--3-col{
+  border-radius: 5px;
+}
+.card-course{
+  font-family: 'Poppins';
+  font-weight: 900;
+  font-size: 24px;
+  color: #fff;
+  opacity: 0.8;
+  margin-top: 32px;
+  margin-left: 8px;
+}
+.card-link{
+  text-decoration: none;
+}
+.card-link:hover{
+  opacity: 0.8;
+}
+.tip-container{
+  font-family: 'Roboto';
+  color: #fff;
+  padding: 16px;
+  border-radius: 5px;
+  background-color: #77bbbb;
+}
+.tip-header{
+  font-family: 'Roboto';
+  color: #fff;
+  font-size: 18px;
+  margin-top: 8px;
+}
+.content-container{
+  padding-left: 24px;
+}
 
 
 
@@ -143,7 +188,7 @@
       -ms-flex-align: center;
           align-items: center;
   color: rgb(255, 255, 255);
-  font-weight: 500;
+  font-weight: 500;37474F;
 }
 .layout .navigation .mdl-navigation__link:hover {
   background-color: #00BCD4;

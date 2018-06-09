@@ -97,12 +97,13 @@
             -->
             <i class="mdl-color-text--green-600 material-icons negative-arrow">arrow_drop_up</i>
             <!--add the percentage value of growth/minus-->
-            <p class="desp-per"></p>
-          </div>
-          
-          
-          <p class="dashboard-header-secondary">Top Cryprocurrencies</p>
+            <p class="desp-per">5.1%</p>
+          </div></div>
+            <div class="mdl-shadow--2dp mdl-cell mdl-cell--10-col mdl-grid tip-container"><span class="tip-header">Hey! Here's a tip to improve your profit!!</span><br/>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
           <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+          <p class="dashboard-header" style="margin-left: 16px;">Top Cryptocurrencies<br/></p>
             <canvas id="pieChart" height="100px"></canvas>
             </div>
         </div>

@@ -4,7 +4,15 @@ $coin[1] = "ethereum";
 $coin[2] = "ripple";
 $coin[3] = "cardano";
 $coin[4] = "tron";
+$image[0] = '<img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1.png" class="logo-sprite" alt="Bitcoin" height="16" width="16">&nbsp;&nbsp;';
 
+$image[1] = '<img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1027.png" class="logo-sprite" alt="Ethereum" height="16" width="16">&nbsp;&nbsp;';
+
+$image[2] = '<img src="https://s2.coinmarketcap.com/static/img/coins/16x16/52.png" class="logo-sprite" alt="Ripple" height="16" width="16">&nbsp;&nbsp;';
+
+$image[3] = '<img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1831.png" class="logo-sprite" alt="Bitcoin Cash" height="16" width="16">&nbsp;&nbsp;';
+
+$image[4] = '<img src="https://s2.coinmarketcap.com/static/img/coins/16x16/1765.png" class="logo-sprite" alt="EOS" height="16" width="16">&nbsp;&nbsp;';
 ?>
 
 <!doctype html>
@@ -46,10 +54,8 @@ $coin[4] = "tron";
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title">Portfolio</span>
           <div class="mdl-layout-spacer"></div>
+          
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="">
-            <i class="material-icons">notifications</i>
-          </button>
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
               <i class="material-icons">search</i>
             </label>
@@ -57,7 +63,6 @@ $coin[4] = "tron";
               <input class="mdl-textfield__input" type="text" id="search">
               <label class="mdl-textfield__label" for="search">Enter your query...</label>
             </div>
-            
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
@@ -89,7 +94,6 @@ $coin[4] = "tron";
         </header>
         <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link active-tab" href="#">Portfolio</a>
-          <a class="mdl-navigation__link" href="#">Watchlist</a>
           <a class="mdl-navigation__link" href="market.html">Market</a>
           <a class="mdl-navigation__link" href="news.html">News</a>
           <hr/>
@@ -101,23 +105,23 @@ $coin[4] = "tron";
         <main class="mdl-layout__content mdl-color--blue-grey-700">
         <div class="mdl-grid content">
           <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-grid">
-            <a href="https://ieee-iccdw.com/portfolio_middle.html" class="card-links">
+            <a href="https://ieee-iccdw.com/portfolio_new.php" class="card-links">
               <p class="dashboard-header">
                 <span class="icons-symbol">+</span>Add a Transaction</p>
             </a>
           </div>
             
           <div class="mdl-cell mdl-cell--12-col mdl-grid">
-            <p class="dashboard-header-secondary">Top Cryprocurrencies</p>
+            <p class="dashboard-header-secondary">Top Cryptocurrencies</p>
           </div>
           <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
             <table class="mdl-data-table mdl-js-data-table" style="width: 100%">
               <thead>
                 <tr>
-                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>RANK</strong></th>
-                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>COINS</strong></th>
-                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>VALUE</strong></th>
-                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>PERCENT CHANGE</strong></th>
+                  <th class="mdl-data-table__cell--non-numeric">RANK</th>
+                  <th class="mdl-data-table__cell--non-numeric">COINS</th>
+                  <th class="mdl-data-table__cell--non-numeric">VALUE</th>
+                  <th class="mdl-data-table__cell--non-numeric">PERCENT CHANGE</th>
                 </tr>
               </thead>
               <tbody>
@@ -125,20 +129,20 @@ $coin[4] = "tron";
                   for($n=0;$n<5;$n++)
                   {
                  $json = file_get_contents('http://13.126.248.75:8080/dataset/coin/'.$coin["$n"]);
-              $data = json_decode($json);
-              $value = $data[0]->Open;
-              $high = $data[0]->High;
-              $low = $data[0]->Low;
-              $volume = ($high+$low)/2 - $value;
-              $z = $n + 1;
-                  echo '
+                $data = json_decode($json);
+                $value = $data[0]->Open;
+                $high = $data[0]->High;
+                $low = $data[0]->Low;
+                $volume = ($high+$low)/2 - $value;
+                $z = $n + 1;
+                    echo '
                 <tr>
                   <th class="mdl-data-table__cell--non-numeric">'.$z.'</th>
-                  <th class="mdl-data-table__cell--non-numeric">'.$coin["$n"].'</th>
+                  <th class="mdl-data-table__cell--non-numeric">'.$image["$n"].$coin["$n"].'</th>
                   <th class="mdl-data-table__cell--non-numeric">'.$value.'</th>
-                  <th class="mdl-data-table__cell--non-numeric">';if($volume<0){echo '<font color="red">'.$volume.'</th>
+                  <th class="mdl-data-table__cell--non-numeric">';if($volume<0){echo '<font color="red">'.$volume.'</font></th>
                 </tr>
-                ';}else {echo'<font color="green">'.$volume.'</th>
+                '; }else {echo'<font color="green">'.$volume.'</font></th>
                 </tr>
                 ';}}
                 ?>

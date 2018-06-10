@@ -1,165 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:700,900|Roboto:900');
-/** Custom Styles 2 **/
+@import url('https://fonts.googleapis.com/css?family=Poppins:700,900|Roboto');
 
-.icons-symbol{
-  font-size: 48px;
-  opacity: 0.9;
-  margin-right: 16px;
-  margin-left: 16px;
-  font-family: 'Roboto';
-  font-weight: 400;
- }
-
- .card-links{
-  text-decoration: none;
- }
- .card-links:hover{
-  opacity: 0.7;
- }
-
- .dashboard-header{
-  font-size: 24px;
-  margin-top: 20px;
-  font-family: 'Poppins';
-  color: #424242;
- }
- .dashboard-header-secondary{
-  font-size: 24px;
-  margin-left: 10px;
-  margin-top: 20px;
-  font-family: 'Poppins';
-  color: #fff;
-  opacity: 0.95;
- }
-
- .dashboard-title-secondary{
-  font-size: 48px;
-  margin-top: 20px;
-  font-family: 'Poppins';
-  color: #fff;
-  margin-bottom: 32px;
- }
-
- .desp-per{
-  font-size: 24px;
- }
-
- .negative-arrow{
-  font-size: 48px;
- }
- .btn-container{
-  margin-top: 50px;
- }
-.btn-fetch, .btn-fetch-2{
-  background-color: #fff;
-}
-.btn-fetch:hover, .btn-fetch-2:hover{
-  background-color: #f0f0f0;
-}
-.btn-fetch-2{
-  margin-left: 16px;
-}
-.see-more-link{
-  text-decoration: none;
-  font-family: 'Roboto';
-  font-weight: 400;
-  font-size: 18px;
-  color: #fff;
-  margin-top: 32px;
-}
-.see-more-link:hover{
-  opacity: 0.8;
-}
-.mdl-cell--3-col{
-  border-radius: 5px;
-}
-.card-course{
-  font-family: 'Poppins';
-  font-weight: 900;
-  font-size: 24px;
-  color: #fff;
-  opacity: 0.8;
-  margin-top: 32px;
-  margin-left: 8px;
-}
-.card-link{
-  text-decoration: none;
-}
-.card-link:hover{
-  opacity: 0.8;
-}
-.tip-container{
-  font-family: 'Roboto';
-  color: #fff;
-  padding: 16px;
-  border-radius: 5px;
-}
-.tip-header{
-  font-family: 'Poppins';
-  color: #fff;
-  font-size: 24px;
-  margin-top: 8px;
-}
-.content-container{
-  padding-left: 24px;
-}
-.table-title{
-  font-size: 24px;
-  font-family: 'Roboto';
-  font-weight: 900;
-}
-
-
-
-/***NEW STYLE***/
-
-.coin-detail-desp{
-  font-family: 'Roboto';
-  font-weight: 500;
-  font-size: 16px;
-}
-
-.coin-detail-desp > span{
-  font-weight: 400;
-  font-size: 14px;
-  margin-top: 16px;
-}
-
-.right-part-portfolio{
-  margin-left: 24px;
-  margin-top: 12px;
-  border-radius: 5px;
-  padding: 24px;  
-}
-.desp-per{
-  font-family: 'Poppins';
-  font-size: 24px;
-  color: #fff;
-  opacity: 0.8;
-  margin-left: -5px;
-  margin-bottom: 24px;
-}
-.portfolio-special-header{
-  margin-top: 48px;
-}
-.white-over{
-  width: 93%;
-  height: 50px;
-  position: absolute;
-  z-index: 999;
-  background-color: #fff;
-}
-
-
-
-
-
-
-
-
-
-
- /**END MANUAL STYLE**/
 .avatar {
   width: 48px;
   height: 48px;
@@ -167,10 +7,10 @@
   margin-bottom: 16px;
 }
 .mdl-layout-title{
-  font-family: 'Poppins';
+  font-family: 'Poppins'
 }
 .layout .mdl-layout__header .mdl-layout__drawer-button {
-  color: rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 0.54);
 }
 .mdl-layout__drawer .avatar {
   margin-bottom: 16px;
@@ -238,7 +78,7 @@
       -ms-flex-align: center;
           align-items: center;
   color: rgb(255, 255, 255);
-  font-weight: 500;37474F;
+  font-weight: 500;
 }
 .layout .navigation .mdl-navigation__link:hover {
   background-color: #00BCD4;
@@ -282,13 +122,6 @@
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-}
-.header-text{
-  font-family: 'Poppins';
-}
-
-.active-tab{
-  background-color: rgba(0,0,0,.5);
 }
 /* TODO: Find a proper solution to have the graphs
  * not float around outside their container in IE10/11.
@@ -367,5 +200,3 @@ _:-ms-input-placeholder, :root .graph {
       -ms-flex-align: center;
           align-items: center;
 }
-
-

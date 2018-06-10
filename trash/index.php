@@ -4,6 +4,7 @@ $coin[1] = "ethereum";
 $coin[2] = "ripple";
 $coin[3] = "cardano";
 $coin[4] = "tron";
+
 ?>
 
 <!doctype html>
@@ -46,6 +47,9 @@ $coin[4] = "tron";
           <span class="mdl-layout-title">Portfolio</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="">
+            <i class="material-icons">notifications</i>
+          </button>
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
               <i class="material-icons">search</i>
             </label>
@@ -53,6 +57,7 @@ $coin[4] = "tron";
               <input class="mdl-textfield__input" type="text" id="search">
               <label class="mdl-textfield__label" for="search">Enter your query...</label>
             </div>
+            
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
@@ -83,9 +88,9 @@ $coin[4] = "tron";
           </div>
         </header>
         <nav class="navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href="portfolio_new.php">Portfolio</a>
-          <a class="mdl-navigation__link" href="watchlist.html">Watchlist</a>
-          <a class="mdl-navigation__link " href="#">Market</a>
+          <a class="mdl-navigation__link active-tab" href="#">Portfolio</a>
+          <a class="mdl-navigation__link" href="#">Watchlist</a>
+          <a class="mdl-navigation__link" href="market.html">Market</a>
           <a class="mdl-navigation__link" href="news.html">News</a>
           <hr/>
           <a class="mdl-navigation__link" href="learn.html">Learn</a>
@@ -95,57 +100,51 @@ $coin[4] = "tron";
       </div>
         <main class="mdl-layout__content mdl-color--blue-grey-700">
         <div class="mdl-grid content">
+          <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-grid">
+            <a href="https://ieee-iccdw.com/portfolio_middle.html" class="card-links">
+              <p class="dashboard-header">
+                <span class="icons-symbol">+</span>Add a Transaction</p>
+            </a>
+          </div>
             
-        <div class="mdl-cell mdl-cell--12-col mdl-grid">
-          <div class="white-over"></div>
-        <iframe src="https://in.widgets.investing.com/top-cryptocurrencies?theme=lightTheme&roundedCorners=true" width="100%" height="500px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
-            
-          <br><br>
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tv-medium-widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BITFINEX-BTCUSD/" rel="noopener" target="_blank"><span class="blue-text">Bitcoin</span></a>, <a href="https://in.tradingview.com/symbols/BITFINEX-ETHEUR/" rel="noopener" target="_blank"><span class="blue-text">Ethereum</span></a> <span class="blue-text">and</span> <a href="https://in.tradingview.com/symbols/BITFINEX-TRXUSD/" rel="noopener" target="_blank"><span class="blue-text">Tronx Quotes</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.MediumWidget(
-  {
-  "container_id": "tv-medium-widget",
-  "symbols": [
-    [
-      "Bitcoin",
-      "BITFINEX:BTCUSD|1y"
-    ],
-    [
-      "Ethereum",
-      "BITFINEX:ETHEUR|1y"
-    ],
-    [
-      "Tronx",
-      "BITFINEX:TRXUSD|1y"
-    ],
-    [
-      "Ripple",
-      "BITFINEX:XRPUSD|1y"
-    ],
-    [
-      "Cardano",
-      "BINANCE:ADAUSD|1y"
-    ]
-  ],
-  "greyText": "Quotes by",
-  "gridLineColor": "#e9e9ea",
-  "fontColor": "#83888D",
-  "underLineColor": "#dbeffb",
-  "trendLineColor": "#4bafe9",
-  "width": "1000px",
-  "height": "600px",
-  "locale": "in"
-}
-  );
-  </script>
-</div>
-<!-- TradingView Widget END -->
-        </div>
+          <div class="mdl-cell mdl-cell--12-col mdl-grid">
+            <p class="dashboard-header-secondary">Top Cryprocurrencies</p>
+          </div>
+          <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+            <table class="mdl-data-table mdl-js-data-table" style="width: 100%">
+              <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>RANK</strong></th>
+                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>COINS</strong></th>
+                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>VALUE</strong></th>
+                  <th class="mdl-data-table__cell--non-numeric table-title"><strong>PERCENT CHANGE</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                  <?php
+                  for($n=0;$n<5;$n++)
+                  {
+                 $json = file_get_contents('http://13.126.248.75:8080/dataset/coin/'.$coin["$n"]);
+              $data = json_decode($json);
+              $value = $data[0]->Open;
+              $high = $data[0]->High;
+              $low = $data[0]->Low;
+              $volume = ($high+$low)/2 - $value;
+              $z = $n + 1;
+                  echo '
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric">'.$z.'</th>
+                  <th class="mdl-data-table__cell--non-numeric">'.$coin["$n"].'</th>
+                  <th class="mdl-data-table__cell--non-numeric">'.$value.'</th>
+                  <th class="mdl-data-table__cell--non-numeric">';if($volume<0){echo '<font color="red">'.$volume.'</th>
+                </tr>
+                ';}else {echo'<font color="green">'.$volume.'</th>
+                </tr>
+                ';}}
+                ?>
+              </tbody>
+            </table>
+            </div>
         </div>
       </main>
     

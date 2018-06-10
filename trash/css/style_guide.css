@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:700,900|Roboto");
+.heading {
+  font-size: 32px;
+  font-family: 'Poppins';
+  font-weight: 900;
+  color: #000000;
+  line-height: 1.36; }
+
+.desp {
+  font-size: 16px;
+  font-family: 'Roboto','Open Sans';
+  font-weight: 400;
+  color: #000000;
+  opacity: 0.8;
+  line-height: 1.24; }
+
+/*# sourceMappingURL=style_guide.css.map */
